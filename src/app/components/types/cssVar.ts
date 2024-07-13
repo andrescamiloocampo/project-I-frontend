@@ -1,0 +1,1 @@
+export type cssVar = React.CSSProperties | Record<string, string | undefined>;

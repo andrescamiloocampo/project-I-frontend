@@ -1,0 +1,54 @@
+.login{
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;    
+    gap: 20px;    
+    padding: 40px;
+    border-radius: 10px;
+    /* background: #5A72A0;     */
+    background: white;
+}
+
+.formText{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 50px;
+}
+
+.formInput{
+    padding: 10px;    
+    color: black;
+    outline: none;
+    border: none;
+    background: none;    
+    border-bottom: solid 1px #000;    
+    position: relative;
+    overflow: visible;
+}
+
+.formInput:focus::placeholder{       
+    transform: translateY(-120%);
+    transition: transform 0.2s ease-in-out;
+    font-size: 10px;
+    color: rgb(80, 153, 80);
+}
+
+.formInput:not(:focus)::placeholder{
+    transform: translateY(0%);
+    transition: transform 0.2s ease-in-out;
+}
+
+.redirect{
+    display: flex;
+    align-items: center;
+}

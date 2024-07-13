@@ -1,0 +1,14 @@
+.H {
+	width: var(--width);
+	height: var(--height);
+	margin: var(--margin);
+	padding: var(--padding);
+	text-align: var(--text-align);
+	background: var(--background);
+	color: var(--color);
+	font-family: var(--font-family);
+	font-variation-settings: var(--font-variation-settings);
+	font-size: var(--font-size, revert);
+	font-style: var(--font-style, normal);
+	font-weight: var(--font-weight, 300);
+}

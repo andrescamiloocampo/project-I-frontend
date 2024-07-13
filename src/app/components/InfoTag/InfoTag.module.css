@@ -1,0 +1,18 @@
+.infoTag{
+    display: flex;        
+    align-items: center;
+    background: #000;
+    width: fit-content;
+    gap: 3px;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 30px;
+    background-color:rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(50px) brightness(0.38) contrast(80%) opacity(15%) saturate(90%);
+}
+
+.new{
+    background: #83B4FF;
+    border-radius: 5px;
+    padding: 2px;
+}

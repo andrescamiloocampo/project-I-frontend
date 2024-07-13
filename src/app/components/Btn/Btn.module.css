@@ -1,0 +1,17 @@
+.btn{    
+    border: none;
+    border-radius: var(--radius,5px);    
+    height: 42px;
+    cursor: pointer;
+    background: var(--bg);
+    color: var(--color);
+    border: var(--border);
+    padding: var(--padding,10px);    
+    font-size: var(--fontSize);
+    font-weight: var(--fontWeigth);
+}
+
+.btn:hover{
+    background: var(--hBg);
+    color: var(--hColor);
+}

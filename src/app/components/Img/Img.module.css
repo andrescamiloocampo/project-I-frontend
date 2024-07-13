@@ -1,0 +1,12 @@
+.div {
+	position: relative;
+	width: var(--width, 100%);
+	height: var(--height, 100%);
+	border-radius: var(--borderRadius, 1.8rem);
+}
+.img {
+	background: center/cover no-repeat;
+	object-fit: cover;
+	object-position: center;
+	border-radius: var(--borderRadius, 1.8rem);
+}

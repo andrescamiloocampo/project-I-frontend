@@ -1,0 +1,34 @@
+.mainHero{
+    width: 100%;
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+    align-items: center;    
+    padding-bottom: 120px;
+}
+
+.welcomeText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.descriptionText{
+    font-weight: 400;
+    color: #cbdfcb;
+}
+
+.title{
+    font-size: 4rem;
+    text-align: center;
+}
+

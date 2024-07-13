@@ -1,0 +1,33 @@
+.searchContainer{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search{    
+    background: #FDFFE2;
+    padding: 7px 7px 7px 30px;
+    border: none;
+    border-radius: 8px;
+    color: black;    
+    width: 700px;   
+    height: 42px; 
+}
+
+.search::placeholder {
+    transition: transform 0.3s ease-in-out;
+}
+
+.search:focus::placeholder{
+    position: absolute;
+    transform: translateY(-60%);    
+    font-size: 10px;
+    color: rgb(139, 139, 139);
+    transition: transform 0.3 ease-in-out;
+}
+
+.searchIcon{
+    position: absolute;
+    left: 10px;    
+    pointer-events: none;
+}
