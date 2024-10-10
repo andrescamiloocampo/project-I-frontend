@@ -1,0 +1,18 @@
+.serviceCard{
+    width: 30%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleContainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.description{
+    padding-left: 50px;
+}
