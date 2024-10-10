@@ -23,9 +23,7 @@ export default async function RootLayout({
     <section lang="en">
       <div className={inter.className}>        
         <NavBar/>
-        <div className={styles.childrenContainer}>
-        {children}
-        </div>
+        <div className={styles.childrenContainer}>{children} </div>
       </div>
     </section>
   );
