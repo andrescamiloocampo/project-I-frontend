@@ -7,7 +7,14 @@ import { getPrediction } from "@/app/server/actions/getPrediction";
 
 export const PageHero = async(): Promise<ReactElement> => {    
   const session = await auth();
-  const prediction = await getPrediction();
+  const prediction = await getPrediction({
+    RUTA: 1,
+    BARRIO: 1,
+    HORARIO: 1,
+    CLIMA: 2,
+    "TIEMPO REAL": 20,
+    "TIEMPO ESPERADO": 25,
+  });
 
   return (
     <div className={styles.mainHero}>     

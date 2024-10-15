@@ -1,0 +1,30 @@
+.Clock{
+    width: 100%;
+    display: flex;    
+    justify-content: end;
+    padding:0 40px;
+}
+
+.clockContent{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.weathers{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;    
+}
+
+.temp{
+    color: rgb(255, 255, 125);
+}
+
+.title{
+    font-size: 35px;
+    font-weight: 600;
+    width: 200px;
+}

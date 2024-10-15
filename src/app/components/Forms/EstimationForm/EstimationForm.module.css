@@ -1,6 +1,52 @@
-.estimationForm{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    gap: 10px;
+.mainForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.estimationForm {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  gap: 10px;
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+    0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  padding: 30px;
+  border-radius: 5px;
+  background: linear-gradient(to bottom right, #e6f2ff, #e6fff2);
+  color: black;
+}
+
+.customSelect {
+  border: none;
+  padding: 8px 12px;
+  background: #fff;
+  color: #000;
+  border-radius: 5px;
+}
+
+.customInput {
+  border: none;
+  padding: 8px 12px;
+  background: #fff;
+  color: #000;
+  border-radius: 5px;
+}
+
+.Label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.submitButton{
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 20px;
+    background: #2563eb;
 }
