@@ -5,6 +5,9 @@ export const parseUser = (formData:FormData):User => {
         firstName: `${formData.get('name')}`,
         lastName:  `${formData.get('lastName')}`,
         isActive: true,
-        password: `${formData.get('password')}`,
+        password: `${formData.get('password')}`,        
+        creationDate: Math.floor(new Date().getTime()/1000),
+        email: `${formData.get('email')}`,
+        file: {image: ''}        
     }
 }

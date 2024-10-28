@@ -20,7 +20,7 @@ export const NavBar = async (): Promise<ReactElement> => {
         <div className={styles.options}>          
           <CustomLink text="Explorar" hDecoration="underline" hColor="#FDFFE2"/>
           <CustomLink text="Directorio" hDecoration="underline" hColor="#FDFFE2"/>
-          <CustomLink text="Servicios" hDecoration="underline" hColor="#FDFFE2"/>
+          <CustomLink text="Servicios" hDecoration="underline" hColor="#FDFFE2" href="/dashboard/services"/>
           <CustomLink text="Trabajos" hDecoration="underline" hColor="#FDFFE2"/>          
         </div>
       </div>

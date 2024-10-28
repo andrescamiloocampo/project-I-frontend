@@ -13,12 +13,12 @@ export default async function RegisterPage(): Promise<ReactElement> {
   return (
     <div className={styles.login}>
       <form
-        className={styles.loginForm}        
-        action={async(formData: FormData)=>{
-          'use server'
+        className={styles.loginForm}
+        action={async (formData: FormData) => {
+          "use server";
           const response = await createUser(formData);
-          if(!response){
-            console.log('Error creating user');
+          if (!response) {
+            console.log("Error creating user");
           }
         }}
       >
@@ -42,6 +42,16 @@ export default async function RegisterPage(): Promise<ReactElement> {
             className={styles.formInput}
             placeholder="Ingrese su apellido"
             name="lastName"
+          />
+
+          <label htmlFor="email">
+            <Text mText="Email" color="black" />
+          </label>
+          <input
+            type="email"
+            className={styles.formInput}
+            placeholder="Ingrese su correo"
+            name="email"
           />
 
           <label htmlFor="username">
@@ -71,7 +81,11 @@ export default async function RegisterPage(): Promise<ReactElement> {
           hBg="linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(26,33,48,1) 35%, rgba(0,212,255,1) 100%)"
         />
         <div className={styles.redirect}>
-          <Text mText="Ya eres parte de la familia?" fontSize="15px" color="black" />
+          <Text
+            mText="Ya eres parte de la familia?"
+            fontSize="15px"
+            color="black"
+          />
           <CustomLink
             text="Inicia sesión"
             color="#a5b0c8"
