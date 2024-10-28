@@ -6,6 +6,7 @@ import { SearchInput } from "../SearchInput/SearchInput";
 import { Btn } from "../Btn/Btn";
 import { CustomLink } from "../Link/Link";
 import { auth } from "../../../../auth";
+import { navLinks } from "@/app/datasources/navigation/navLinks";
 
 export const NavBar = async (): Promise<ReactElement> => {
   const session = await auth();
@@ -14,7 +15,7 @@ export const NavBar = async (): Promise<ReactElement> => {
       <div className={styles.optionsContainer}>
         <div className={styles.title}>
             <RectangleGroupIcon width={"2rem"} height={"2rem"} />
-            <p>Project I</p>
+            <p>UnifiCars</p>
         </div>
 
         <div className={styles.options}>          
