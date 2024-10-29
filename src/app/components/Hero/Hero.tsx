@@ -2,23 +2,10 @@ import type { ReactElement } from "react";
 import styles from "./Hero.module.css";
 import { InfoTag } from "../InfoTag/InfoTag";
 import { Btn } from "../Btn/Btn";
-import { auth } from "../../../../auth";
-import { getPrediction } from "@/app/server/actions/getPrediction";
 
-export const PageHero = async(): Promise<ReactElement> => {    
-  const session = await auth();
-  const prediction = await getPrediction({
-    RUTA: 1,
-    BARRIO: 1,
-    HORARIO: 1,
-    CLIMA: 2,
-    "TIEMPO REAL": 20,
-    "TIEMPO ESPERADO": 25,
-  });
-
+export const PageHero = async(): Promise<ReactElement> => {      
   return (
-    <div className={styles.mainHero}>     
-    {JSON.stringify(prediction)}
+    <div className={styles.mainHero}>         
       <pre>        
       </pre>
       <div className={styles.welcomeText}>        
