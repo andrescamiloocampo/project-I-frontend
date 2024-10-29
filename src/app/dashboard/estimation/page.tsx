@@ -1,9 +1,9 @@
 import { type ReactElement } from "react";
-import { EstimationForm } from "../../Forms/EstimationForm/EstimationForm";
-import styles from './EstimationServicePage.module.css';
-import { Clock } from "../../Clock/Clock";
+import { EstimationForm } from "@/app/components/Forms/EstimationForm/EstimationForm";
+import styles from './estimation.module.css';
+import { Clock } from "@/app/components/Clock/Clock";
 import { getWeather } from "@/app/server/actions/getWeather";
-import { auth } from "../../../../../auth";
+import { auth } from "../../../../auth";
 
 export default async function EstimationServicePage():Promise<ReactElement>{    
     const weather = await getWeather();

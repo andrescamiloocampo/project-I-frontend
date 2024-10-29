@@ -1,4 +1,4 @@
-/* .login{
+.login{
     display: flex;
     flex-direction: column;    
     justify-content: center;
@@ -10,11 +10,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 30%;    
-    gap: 20px;    
-    padding: 40px;
-    border-radius: 10px;
+    width: 100%;    
+    gap: 10px;    
+    padding: 20px;
+    border-radius: 0 10px 10px 0;
+    /* background: #5A72A0;     */
     background: white;
+    height: 77vh;
 }
 
 .formText{
@@ -50,4 +52,4 @@
 .redirect{
     display: flex;
     align-items: center;
-} */
+}

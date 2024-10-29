@@ -1,54 +1,75 @@
-.login{
-    display: flex;
-    flex-direction: column;    
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.mainContent {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;   
 }
 
-.loginForm{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30%;    
-    gap: 20px;    
-    padding: 40px;
-    border-radius: 10px;
-    /* background: #5A72A0;     */
-    background: white;
+.options {
+  background: rgb(94, 94, 255);
+  width: 30%;
+  height: 77vh;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 20px;
+  border-radius: 10px 0 0 10px;
+  position: relative;
 }
 
-.formText{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding-bottom: 50px;
+.btns{
+  margin-bottom: 80px;
 }
 
-.formInput{
-    padding: 10px;    
-    color: black;
-    outline: none;
-    border: none;
-    background: none;    
-    border-bottom: solid 1px #000;    
-    position: relative;
-    overflow: visible;
+.welcome{
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 77vh;
+  background: white;
+  border-radius: 0 10px 10px 0;
+  gap: 20px;
 }
 
-.formInput:focus::placeholder{       
-    transform: translateY(-120%);
-    transition: transform 0.2s ease-in-out;
-    font-size: 10px;
-    color: rgb(80, 153, 80);
+.imageContainer{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
+  position: absolute;
 }
 
-.formInput:not(:focus)::placeholder{
-    transform: translateY(0%);
-    transition: transform 0.2s ease-in-out;
+.borders{
+  border-radius: 10px;
 }
 
-.redirect{
-    display: flex;
-    align-items: center;
+.transitionForm {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  z-index: 1;
+  transform: translateX(-5vw); /* Ajuste para que inicie justo detrás de .options */
+  /* animation: moverX 1s ease-in-out forwards;   */
+}
+
+.transitionForm.animate{
+  animation: moverX 1s ease-in-out forwards;  
+}
+
+.hidden{
+  display: none;
+}
+
+@keyframes moverX {
+  0% {
+    transform: translateX(-30vw); /* Inicia justo detrás de .options */
+  }
+  100% {
+    transform: translateX(0);
+  }
 }

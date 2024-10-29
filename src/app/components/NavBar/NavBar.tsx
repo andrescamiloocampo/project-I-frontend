@@ -7,6 +7,7 @@ import { Btn } from "../Btn/Btn";
 import { CustomLink } from "../Link/Link";
 import { auth } from "../../../../auth";
 import { navLinks } from "@/app/datasources/navigation/navLinks";
+import { Button } from "@mui/material";
 
 export const NavBar = async (): Promise<ReactElement> => {
   const session = await auth();
@@ -19,15 +20,13 @@ export const NavBar = async (): Promise<ReactElement> => {
         </div>
 
         <div className={styles.options}>          
-          <CustomLink text="Explorar" hDecoration="underline" hColor="#FDFFE2"/>
-          <CustomLink text="Directorio" hDecoration="underline" hColor="#FDFFE2"/>
-          <CustomLink text="Servicios" hDecoration="underline" hColor="#FDFFE2" href="/dashboard/services"/>
-          <CustomLink text="Trabajos" hDecoration="underline" hColor="#FDFFE2"/>          
+          <CustomLink text="Explorar" hDecoration="underline" hColor="#FDFFE2" href="/dashboard"/>          
+          <CustomLink text="Servicios" hDecoration="underline" hColor="#FDFFE2" href="/dashboard/services"/>          
         </div>
       </div>
 
       <div className={styles.searchOptions}>
-        <SearchInput />
+        {/* <SearchInput /> */}
 
         <div className={styles.buttons}>
           {session ? (
@@ -37,7 +36,8 @@ export const NavBar = async (): Promise<ReactElement> => {
                 await signOut();
               }}
             >
-              <Btn text="Cerrar sesión" border="solid 1px white" />
+              {/* <Btn text="Cerrar sesión" border="solid 1px white" /> */}
+              <Button type="submit" variant="contained">Cerrar sesión</Button>
             </form>
           ) : (
             <>

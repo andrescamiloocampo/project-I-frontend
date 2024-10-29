@@ -1,56 +1,87 @@
-import { type ReactElement } from "react";
-import styles from './loginStyles.module.css';
-import { signIn,auth } from "../../../auth";
-import { redirect } from "next/navigation";
-import { Btn } from "../components/Btn/Btn";
+import { ReactElement } from "react";
+import LoginForm from "../components/LoginForm/LoginForm";
+import styles from "./loginStyles.module.css";
+import Button from '@mui/material/Button'
+import { RegisterForm } from "../components/RegisterForm/RegisterForm";
+import Link from "next/link";
 import { Text } from "../components/Text/Text";
-import { CustomLink } from "../components/Link/Link";
-import { useState } from "react";
+import Image from "next/image";
+import bus from "../../../public/bus.png";
+import stop from '../../../public/stop.jpg'
 
-export interface Session {
-    user?: {
-        id?: string;
-        sessionData?: {
-            acces_token: string;
-            message: string;
-        };
-        expires?: string; 
-    }
-}
-
-export default async function LoginPage(): Promise<ReactElement> {
-    
-    const session:Session = await auth() ?? {user:{id:'',expires:''}};    
-    console.log(session);
-    if(session?.user?.sessionData) redirect('/');
-
-    if(!session.user?.sessionData) {
-        console.log('Credenciales incorrectas');
-    }
-    return (
-        <div className={styles.login}>                        
-            <form className={styles.loginForm} action={async (formData:FormData)=>{
-                'use server'
-                await signIn('credentials',formData)                                
-            }}>
-                <Text mText="Iniciar sesión" fontSize="30px" color="black"/>
-                <div className={styles.formText}>
-                    <label htmlFor="username" >
-                        <Text mText="Nombre de usuario" color="black"/>
-                    </label>
-                    <input type="text" className={styles.formInput} placeholder="Ingrese su usuario" name='username' />
-
-                    <label htmlFor="password" >
-                        <Text mText="Contraseña" color="black"/>
-                    </label>
-                    <input type="password" className={styles.formInput} placeholder="Ingrese su contraseña" name='password' />                    
-                </div>                
-                <Btn color="" text="Ingresar" bg="#1A2130" hBg="linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(26,33,48,1) 35%, rgba(0,212,255,1) 100%)"/>
-                <div className={styles.redirect}>
-                    <Text mText="No tienes una cuenta?" fontSize="15px" color="black"/>
-                    <CustomLink text="Registrate" color="#a5b0c8" hColor="#a5b0c8" hDecoration="underline" href="/register"/>
-                </div>
-            </form>                           
+export default function LoginPage({
+  searchParams,
+}: {
+  searchParams: { method: string };
+}): ReactElement {
+  const method = searchParams.method;
+  console.log(method);
+  return (
+    <div className={styles.mainContent}>
+      <div className={`${styles.options}`}>
+        <div className={styles.imageContainer}>
+          <Image
+            src={stop}
+            alt="stop"
+            width={0}
+            height={0}
+            objectFit="cover"
+            style={{ width: "100%", height: "100%",borderRadius: 'inherit' }}
+          />
         </div>
-    );
+        <Link href="?method=login" passHref className={styles.btns}>
+          <Button variant="contained">Iniciar sesión</Button>
+        </Link>
+        <Link href="?method=register" passHref className={styles.btns}>
+          <Button variant="contained">Registrarse</Button>          
+        </Link>
+      </div>
+
+      {!method && (
+        <div
+          className={`${styles.transitionForm} ${
+            !method ? styles.animate : ""
+          }`}
+        >
+          <div className={method ? styles.hidden : ""}>
+            <div className={styles.welcome}>
+              <Text
+                mText="¡Bienvenido!"
+                color="black"
+                fontWeight="600"
+                fontSize="60px"
+              />
+              <Text
+                mText="Unificars la plataforma que lo hace por usted 🚌"
+                color="black"
+                fontWeight="400"
+                fontSize="17px"
+              />
+              <Image src={bus} alt="Imagen de un bus" width={200} height={50} />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {method === "login" && (
+        <div
+          className={`${styles.transitionForm} ${method ? styles.animate : ""}`}
+        >
+          <div className={method !== "login" ? styles.hidden : ""}>
+            <LoginForm />
+          </div>
+        </div>
+      )}
+
+      {method === "register" && (
+        <div
+          className={`${styles.transitionForm} ${method ? styles.animate : ""}`}
+        >
+          <div className={method !== "register" ? styles.hidden : ""}>
+            <RegisterForm />
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }
