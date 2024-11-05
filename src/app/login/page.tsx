@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import LoginForm from "../components/LoginForm/LoginForm";
+import LoginForm, { type Session } from "../components/LoginForm/LoginForm";
 import styles from "./loginStyles.module.css";
 import Button from '@mui/material/Button'
 import { RegisterForm } from "../components/RegisterForm/RegisterForm";
@@ -8,12 +8,18 @@ import { Text } from "../components/Text/Text";
 import Image from "next/image";
 import bus from "../../../public/bus.png";
 import stop from '../../../public/stop.jpg'
+import { redirect } from "next/navigation";
+import { auth } from "../../../auth";
 
-export default function LoginPage({
+export default async function LoginPage({
   searchParams,
 }: {
   searchParams: { method: string };
-}): ReactElement {
+}): Promise<ReactElement> {
+  const session: Session = (await auth()) ?? { user: { id: "", expires: "" } };
+  console.log("Esta es la sesion:", session);
+
+  if (session?.user?.sessionData) redirect("/");
   const method = searchParams.method;
   console.log(method);
   return (

@@ -1,7 +1,7 @@
 .Clock{
     width: 100%;
     display: flex;    
-    justify-content: end;
+    justify-content: flex-end;
     padding:0 40px;
 }
 
@@ -15,7 +15,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 10px; 
     padding: 10px 0;    
 }
 

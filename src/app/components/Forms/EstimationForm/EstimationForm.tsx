@@ -98,13 +98,13 @@ export const EstimationForm = ({weather}:EstimationFormM):ReactElement => {
             </select>
 
             <label htmlFor="weather" className={styles.Label}><IoIosCloudOutline size={25}/> Clima</label>
-            <select name="weather" value={(weather.temperature>23 && weather.precipitation <= 0)?'1':'2'}  className={styles.customSelect}>
+            <select name="weather" value={(weather.temperature>23 && weather.precipitation <= 0)?'1':'2'}  className={styles.customSelect} disabled>
                 <option value="1">Cálido</option>
                 <option value="2">Frío</option>
             </select>
 
             <label htmlFor="schedule" className={styles.Label}><RiCalendarScheduleLine size={25}/> Horario</label>
-            <select name="schedule" className={styles.customSelect} value={(hourRange(currentHour))}>
+            <select name="schedule" className={styles.customSelect} value={(hourRange(currentHour))} disabled>
                 <option value="1">8 - 11</option>
                 <option value="2">14 - 16</option>
                 <option value="3">17 - 19</option>
