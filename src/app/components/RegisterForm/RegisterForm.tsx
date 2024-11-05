@@ -2,15 +2,16 @@ import { type ReactElement } from "react";
 import styles from './RegisterForm.module.css'
 import { auth } from "../../../../auth";
 import { redirect } from "next/navigation";
-import { Btn } from "../Btn/Btn";
 import { Text } from "../Text/Text";
 import { CustomLink } from "../Link/Link";
 import { createUser } from "../../../../api/user/createUser";
 import { Button } from "@mui/material";
+import { Session } from "../LoginForm/LoginForm";
 
-export const    RegisterForm = async(): Promise<ReactElement> => {
-  const session: any = await auth();
-  if (session) redirect("/");
+export const RegisterForm = async(): Promise<ReactElement> => {
+  const session: Session = (await auth()) ?? { user: { id: "", expires: "" } };
+  
+  if (session?.user?.sessionData) redirect("/");
   return (
     <div className={styles.login}>
       <form
@@ -18,9 +19,11 @@ export const    RegisterForm = async(): Promise<ReactElement> => {
         action={async (formData: FormData) => {
           "use server";
           const response = await createUser(formData);
+          console.log(response);
           if (!response) {
             console.log("Error creating user");
           }
+          redirect('/login?method=login');
         }}
       >
         <Text mText="Registrarse" fontSize="30px" color="black" />
