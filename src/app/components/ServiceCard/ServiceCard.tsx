@@ -4,7 +4,6 @@ import { type ReactElement } from "react";
 import styles from './ServiceCard.module.css';
 import type { ServiceCardM } from "./ServiceCard.model";
 import { useRouter } from "next/navigation";
-import { AiOutlineClockCircle } from "react-icons/ai";
 
 export const ServiceCard = ({title,description,href,icon}:ServiceCardM):ReactElement => {
 

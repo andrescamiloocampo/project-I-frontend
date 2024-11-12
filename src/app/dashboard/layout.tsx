@@ -21,9 +21,11 @@ export default async function RootLayout({
   if(!session) redirect('/login');
   return (
     <section lang="en">
-      <div className={inter.className}>        
-        <NavBar/>
-        <div className={styles.childrenContainer}>{children} </div>
+      <div className={inter.className}>                
+        <div className={styles.childrenContainer}>
+          <NavBar/>
+          {children} 
+        </div>
       </div>
     </section>
   );

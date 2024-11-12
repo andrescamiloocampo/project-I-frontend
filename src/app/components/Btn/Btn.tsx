@@ -15,6 +15,7 @@ export const Btn = ({
   fontWeigth,
   hColor,
   hBg,
+  icon
 }: BtnM): ReactElement => {
   const cssStyles: cssVar = {
     "--bg": bg,
@@ -25,11 +26,12 @@ export const Btn = ({
     "--font-size": fontSize,
     "--font-weigth": fontWeigth,
     "--hColor": hColor,
-    "--hBg": hBg,
+    "--hBg": hBg,    
   };
 
   return (
     <button onClick={onClick} className={styles.btn} style={cssStyles}>
+      <span style={{width: '100%',height: '100%'}}>{icon}</span>
       {text}
     </button>
   );
