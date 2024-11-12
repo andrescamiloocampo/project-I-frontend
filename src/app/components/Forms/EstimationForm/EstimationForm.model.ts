@@ -1,6 +1,9 @@
-import { WeatherConditionsM } from "../../Pages/EstimationService/EstimationService.model";
+import { WeatherConditionsM } from "@/app/dashboard/estimation/estimation.model";
+import { ZoneM,RouteM } from "@/app/interfaces";
 
 export interface EstimationFormM{
     weather: WeatherConditionsM;
-    userName?: string;
+    userName?: string;   
+    zones: ZoneM[];  
+    routes: RouteM[];
 }

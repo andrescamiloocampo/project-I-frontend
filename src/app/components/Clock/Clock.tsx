@@ -2,7 +2,7 @@
 
 import { useEffect, useState, type ReactElement } from "react"
 import styles from './Clock.module.css';
-import type { WeatherConditionsM } from "../Pages/EstimationService/EstimationService.model";
+import { WeatherConditionsM } from "@/app/dashboard/estimation/estimation.model";
 import { LuClock3 } from "react-icons/lu";
 import {WiDayCloudy} from "react-icons/wi"
 import { BsCloudHail } from "react-icons/bs";

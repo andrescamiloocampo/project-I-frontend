@@ -10,4 +10,5 @@ export interface BtnM {
   fontWeigth?: string;
   hColor?: string;
   hBg?: string;
+  icon?: React.ReactElement;
 }

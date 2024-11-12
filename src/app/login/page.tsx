@@ -58,7 +58,7 @@ export default async function LoginPage({
                 fontSize="60px"
               />
               <Text
-                mText="Unificars la plataforma que lo hace por usted 🚌"
+                mText="Tride la plataforma que lo hace por usted 🚌"
                 color="black"
                 fontWeight="400"
                 fontSize="17px"

@@ -23,7 +23,7 @@ export interface Session {
 export default async function LoginForm(): Promise<ReactElement> {
   const session: Session = (await auth()) ?? { user: { id: "", expires: "" } };
   console.log("Esta es la sesion:", session);
-
+  
   if (session?.user?.sessionData) redirect("/");
 
   return (
