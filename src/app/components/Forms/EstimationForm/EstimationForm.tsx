@@ -4,6 +4,7 @@ import styles from "./EstimationForm.module.css";
 import type { EstimationFormM } from "./EstimationForm.model";
 import { Text } from "../../Text/Text";
 import { Modal } from "../../Modal/Modal";
+import { useSession } from "next-auth/react";
 interface FormFieldsM {
   BARRIO: string;
   RUTA: string;
@@ -16,6 +17,9 @@ export const EstimationForm = ({
   zones,
   routes,
 }: EstimationFormM): ReactElement => {
+
+  const session = useSession();
+
   const getSchedule = () => {
     const currentHour = new Date().getHours();
     if (currentHour >= 6 && currentHour <= 10) {
@@ -120,8 +124,30 @@ export const EstimationForm = ({
     }
   };
 
-  const manageModal = (): void => {
-    setOpenModal(!openModal);
+  const manageModal = async (): Promise<any> => {
+    const raw = {
+      ...formFields,
+      TIEMPO_REAL: prediction.prediction,
+      TIEMPO_ESPERADO: expectedTime,
+      TIEMPO_PERDIDO: prediction.prediction - expectedTime, 
+      id: session.data?.user?.id     
+    };    
+    console.log(raw)
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_MODEL}/createPrediction`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(raw)
+      });
+
+      if (!response.ok) return new Error("No se pudo obtener informacion");
+
+      const result = await response.json();    
+    } catch (error) {
+      console.log("Error haciendo peticion", error);
+    }
     setPrediction({ prediction: -1 });
   };
 
@@ -132,14 +158,14 @@ export const EstimationForm = ({
   }, [formFields]);
 
   return (
-    <div className={styles.travel}>
+    <div className={styles.travel}>      
       <Modal
         isOpen={prediction.prediction !== -1}
         action={manageModal}
-        close={()=>setPrediction({ prediction: -1 })}
+        close={() => setPrediction({ prediction: -1 })}
         real={Math.round(prediction.prediction)}
         expected={expectedTime}
-      />      
+      />
       <div className={styles.mainContent}>
         {currentStep >= 0 && (
           <div className={styles.stepContainer}>

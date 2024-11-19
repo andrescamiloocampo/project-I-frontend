@@ -5,7 +5,15 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'images.unsplash.com'
-            }
+            },
+            {
+                protocol: 'https',
+                hostname: 'unilimpio.com'
+            },            
+            {
+                protocol: 'https',
+                hostname: 'image.cdn2.seaart.me'
+            },            
         ]
     }
 };
