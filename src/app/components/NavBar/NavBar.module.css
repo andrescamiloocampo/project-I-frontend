@@ -1,15 +1,13 @@
 .mainNav{
-    width: 100%;    
+    width: 100%;
     display: flex;
     align-items: center; 
     justify-content: space-between;   
     padding: 15px;
     gap: 20px;    
-    margin-bottom: 2rem;    
-    /* background: black; */
-    background: linear-gradient(135deg, #0A0A1A, #1E2134);
-    /* position: fixed; */
-    z-index: 100;
+    margin-bottom: 2rem;        
+    /* background: linear-gradient(135deg, #0A0A1A, #1E2134); */
+    background: linear-gradient(92.41deg, #001b33, #2a6b99);        
 }
 
 .title{
@@ -54,3 +52,4 @@
     display: flex;
     gap: 20px;
 }
+

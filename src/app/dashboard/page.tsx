@@ -17,8 +17,7 @@ export default function DashboardPage():ReactElement {
             <PageHero action={scrollToTestimonial}/>
             <div ref={testimonialRef}>
                 <Testimonial/>
-            </div>
-            <Footer/>
+            </div>            
         </>
     )
 }

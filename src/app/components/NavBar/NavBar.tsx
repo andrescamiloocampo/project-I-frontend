@@ -1,7 +1,6 @@
 import { type ReactElement } from "react";
 import styles from "./NavBar.module.css";
 import { signOut } from "../../../../auth";
-import { RectangleGroupIcon } from "@heroicons/react/24/outline";
 import { GiPlanetCore } from "react-icons/gi";
 import { CustomLink } from "../Link/Link";
 import { auth } from "../../../../auth";

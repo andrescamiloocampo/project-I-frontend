@@ -3,7 +3,9 @@ import { Inter } from "next/font/google";
 import { NavBar } from "../components/NavBar/NavBar";
 import { redirect } from "next/navigation";
 import { auth } from "../../../auth";
-import styles from './page.module.css'
+import styles from "./page.module.css";
+import { SessionProvider } from "next-auth/react";
+import { Footer } from "../components/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,16 +18,18 @@ export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {    
+}>) {
   const session = await auth();
-  if(!session) redirect('/login');
+  if (!session) redirect("/login");
   return (
     <section lang="en">
-      <div className={inter.className}>                
-        <div className={styles.childrenContainer}>
-          <NavBar/>
-          {children} 
-        </div>
+      <div className={inter.className}>
+        <SessionProvider>
+          <div className={styles.childrenContainer}>
+            <NavBar />
+            {children}            
+          </div>
+        </SessionProvider>
       </div>
     </section>
   );
