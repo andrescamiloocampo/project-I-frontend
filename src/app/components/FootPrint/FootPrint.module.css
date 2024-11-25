@@ -1,54 +1,91 @@
-/* Contenedor principal
-.mainContainer {
-    margin: 2%;
-    height: 85vh;
-    padding: 24px;
-    background-color: #f3e8ff;
-  } */
-  .username {
-    margin-top: 10px; /* Separar el nombre del círculo */
-    font-size: 16px; /* Tamaño de fuente adecuado */
-    font-weight: bold; /* Negrita */
-    font-family: 'Georgia', serif; /* Fuente formal */
+.username {
+    margin-top: 10px;     
+    font-size: 16px; 
+    font-weight: bold; 
+    font-family: sans-serif;
     color: #581c87;
     text-align: center;
   }
   
-  /* Línea de separación */
   .divider {
-    margin: 24px 0; /* Espacio superior e inferior */
+    margin: 24px 0;
     border: none;
-    border-top: 2px solid #d8b4fe; /* Color y grosor de la línea */
+    border-top: 2px solid #d8b4fe;
   }
+
   .predictions{
-    position: flex;
-    color:#581c87
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 300px;
+    overflow: auto;
+    color:#581c87;
+    scrollbar-gutter: stable both-edges;
   }
+
+  .predictions::-webkit-scrollbar{    
+      width: 10px;    
+  }
+
+.predictions::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+.predictions::-webkit-scrollbar-track {
+  background: #949393;
+  border-radius: 50px;
+}
+
+.predictions::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background: #d8b4fe;
+}
+
+.predictions::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
   .cardContainer {
     position: relative;
     max-width: 90%;
     margin: auto;
-    height: 85%;
-    background-color: #f3e8ff;
+    /*   */
+    background-color: #ddd6fe;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
   }
-  
-  /* Contenedor flexible */
+    
   .flexContainer {
     display: flex;
   }
-  
-  /* Lado izquierdo */
+    
   .leftSide {
-    width: 33.333%;
+    color: black;
+    /* width: 33.333%; */
+    width: 500px;
     border-right: 1px solid #d8b4fe;
     padding: 24px;
     display: flex;
-    flex-direction: column; /* Apila elementos en columna */
-    justify-content: center; /* Centra el contenido verticalmente */
-    align-items: center; /* Centra el contenido horizontalmente */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .routeTitle{
+    font-weight: bold;
+  }
+
+  .routeTitle span{
+    font-weight: normal;
+  }
+
+  .welcome{
+    display: flex;
+    flex-direction: column;
   }
   
   .circle {
@@ -57,8 +94,14 @@
     align-items: center;
     width: 200px;
     height: 200px;
-    border-radius: 50%;
-    border: 2px solid #d8b4fe;
+    border-radius: 50%;    
+  }
+
+  .planet{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    scale: 1;
   }
   
   .circleText {
@@ -67,10 +110,10 @@
     color: #6b21a8;
     text-align: center;
   }
-  
-  /* Lado derecho */
+    
   .rightSide {
-    width: 66.666%;
+    /* width: 66.666%; */
+    flex: 1;
     padding: 24px;
   }
   
@@ -82,10 +125,9 @@
     margin-bottom: 24px;
   }
   
-  /* Barra de progreso */
   .progressSection {
     display: flex;
-    align-items: center;
+    align-items: center;    
     gap: 16px;
   }
   
@@ -116,22 +158,46 @@
     text-align: left;
   }
   
-  .ul {
-    list-style-type: none; /* Elimina los puntos de la lista */
-    padding: 0; /* Opcional: elimina el espacio de los márgenes de la lista */
+  .routes {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    list-style-type: none;    
   }
   
-  .lista {
-    font-weight: bold; /* Negrita */
-    font-family: 'Georgia', serif; /* Fuente formal */
-    margin: 5px 0; /* Espacio entre elementos */
+  .routeContainer {    
+    font-family: sans-serif;
+    margin-right: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    border: solid 1px #d8b4fe;
+  }
+
+  .routesTitle{
+    font-size: 24px;
+    padding: 5px 10px;
+    font-weight: bold;
+    color: black;
   }
   
-  /* Ajustar el texto de la barra de progreso */
   .progressDescription {
     font-size: 12px;
-    font-weight: bold; /* Negrita */
-    font-family: 'Georgia', serif; /* Fuente formal */
+    font-weight: bold; 
+    font-family: sans-serif;
     color: #9333ea;
     text-align: left;
   }
+  
+  .stats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;        
+  }
+
+  .statsTitle{
+    color: black;
+    font-weight: bold;
+    font-size: 10px;
+  }
+

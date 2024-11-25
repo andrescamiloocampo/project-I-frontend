@@ -14,6 +14,10 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'image.cdn2.seaart.me'
             },            
+            {
+                protocol: 'https',
+                hostname: 'w7.pngwing.com'
+            },            
         ]
     }
 };

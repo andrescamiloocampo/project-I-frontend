@@ -52,9 +52,9 @@ export const Clock = ({precipitation,temperature}:WeatherConditionsM):ReactEleme
           </p>
 
           <div className={styles.weathers}>
-            <MdOutlineWbSunny size={35} color={(precipitation<=0 && temperature>23)?"yellow":"#6b6b6b"}/>
-            <BsCloudHail size={30} color={(precipitation>=0.7)?"yellow":"#6b6b6b"}/>
-            <WiDayCloudy size={40} color={(precipitation<0.6 && temperature<23)?"yellow":"#6b6b6b"}/>
+            <MdOutlineWbSunny size={35} color={(precipitation<=0 && temperature>23)?"yellow":"#fff"}/>
+            <BsCloudHail size={30} color={(precipitation>=0.7)?"yellow":"#fff"}/>
+            <WiDayCloudy size={40} color={(precipitation<0.6 && temperature<23)?"yellow":"#fff"}/>
           </div>
         </div>
     </div>

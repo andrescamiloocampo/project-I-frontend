@@ -28,6 +28,7 @@ export default async function RootLayout({
           <div className={styles.childrenContainer}>
             <NavBar />
             {children}            
+            <Footer/>
           </div>
         </SessionProvider>
       </div>

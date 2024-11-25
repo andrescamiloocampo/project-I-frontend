@@ -1,10 +1,11 @@
-/* Contenedor principal
-.mainContainer {
-    margin: 2%;
-    height: 85vh;
-    padding: 24px;
-    background-color: #f3e8ff;
-  } */
+
+.mainContainer {    
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  height: 80vh;
+
+} 
   
   .cardContainer {
     position: relative;

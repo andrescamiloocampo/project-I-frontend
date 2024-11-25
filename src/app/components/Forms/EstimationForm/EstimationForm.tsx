@@ -5,6 +5,7 @@ import type { EstimationFormM } from "./EstimationForm.model";
 import { Text } from "../../Text/Text";
 import { Modal } from "../../Modal/Modal";
 import { useSession } from "next-auth/react";
+import { LinearProgressIndicator } from "../../LinearProgressIndicator/LinearProgressIndicator";
 interface FormFieldsM {
   BARRIO: string;
   RUTA: string;
@@ -19,7 +20,7 @@ export const EstimationForm = ({
 }: EstimationFormM): ReactElement => {
 
   const session = useSession();
-
+  
   const getSchedule = () => {
     const currentHour = new Date().getHours();
     if (currentHour >= 6 && currentHour <= 10) {
@@ -41,6 +42,7 @@ export const EstimationForm = ({
   const [prediction, setPrediction] = useState({ prediction: -1 });
   const [openModal, setOpenModal] = useState(!!prediction);
   const [expectedTime, setExpectedTime] = useState(0);
+  const [progress,setProgress] = useState(0);
 
   const [formFields, setFormFields] = useState<FormFieldsM>({
     RUTA: "",
@@ -158,7 +160,7 @@ export const EstimationForm = ({
   }, [formFields]);
 
   return (
-    <div className={styles.travel}>      
+    <div className={styles.travel}>          
       <Modal
         isOpen={prediction.prediction !== -1}
         action={manageModal}
