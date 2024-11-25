@@ -5,7 +5,25 @@
     padding: 24px;
     background-color: #f3e8ff;
   } */
+  .username {
+    margin-top: 10px; /* Separar el nombre del círculo */
+    font-size: 16px; /* Tamaño de fuente adecuado */
+    font-weight: bold; /* Negrita */
+    font-family: 'Georgia', serif; /* Fuente formal */
+    color: #581c87;
+    text-align: center;
+  }
   
+  /* Línea de separación */
+  .divider {
+    margin: 24px 0; /* Espacio superior e inferior */
+    border: none;
+    border-top: 2px solid #d8b4fe; /* Color y grosor de la línea */
+  }
+  .predictions{
+    position: flex;
+    color:#581c87
+  }
   .cardContainer {
     position: relative;
     max-width: 90%;
@@ -28,8 +46,9 @@
     border-right: 1px solid #d8b4fe;
     padding: 24px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Apila elementos en columna */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
   }
   
   .circle {
@@ -97,3 +116,22 @@
     text-align: left;
   }
   
+  .ul {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Opcional: elimina el espacio de los márgenes de la lista */
+  }
+  
+  .lista {
+    font-weight: bold; /* Negrita */
+    font-family: 'Georgia', serif; /* Fuente formal */
+    margin: 5px 0; /* Espacio entre elementos */
+  }
+  
+  /* Ajustar el texto de la barra de progreso */
+  .progressDescription {
+    font-size: 12px;
+    font-weight: bold; /* Negrita */
+    font-family: 'Georgia', serif; /* Fuente formal */
+    color: #9333ea;
+    text-align: left;
+  }
