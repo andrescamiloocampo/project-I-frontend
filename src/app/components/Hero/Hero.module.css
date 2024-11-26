@@ -24,6 +24,7 @@
 
 .descriptionText{
     font-weight: 400;
+    text-align: center;
     color: #cbdfcb;
 }
 
@@ -32,3 +33,15 @@
     text-align: center;
 }
 
+
+@media screen and (max-width:390px) {
+    .title{
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width:430px) {
+    .mainHero{
+        padding-bottom: 30px;
+    }
+}

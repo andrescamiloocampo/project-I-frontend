@@ -3,10 +3,10 @@
     flex-direction: column;
     width: 100%;
     /* background: #04060a;     */
-    height: 700px;
-    align-items: center;
-    padding: 20px;
+    /* height: 700px; */
+    align-items: center;    
     gap: 20px;
+    padding-bottom: 60px;
 }
 
 .cards{
@@ -14,4 +14,10 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+}
+
+@media screen and (max-width: 500px){
+    .testimonial{
+        padding: 30px;
+    }
 }
