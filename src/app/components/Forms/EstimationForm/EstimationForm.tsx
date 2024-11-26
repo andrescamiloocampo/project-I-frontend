@@ -5,7 +5,8 @@ import type { EstimationFormM } from "./EstimationForm.model";
 import { Text } from "../../Text/Text";
 import { Modal } from "../../Modal/Modal";
 import { useSession } from "next-auth/react";
-import { LinearProgressIndicator } from "../../LinearProgressIndicator/LinearProgressIndicator";
+import { trainModel } from "@/../api";
+
 interface FormFieldsM {
   BARRIO: string;
   RUTA: string;
@@ -40,9 +41,7 @@ export const EstimationForm = ({
   const [nextStep, setNextStep] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
   const [prediction, setPrediction] = useState({ prediction: -1 });
-  const [openModal, setOpenModal] = useState(!!prediction);
   const [expectedTime, setExpectedTime] = useState(0);
-  const [progress,setProgress] = useState(0);
 
   const [formFields, setFormFields] = useState<FormFieldsM>({
     RUTA: "",
@@ -135,6 +134,7 @@ export const EstimationForm = ({
       id: session.data?.user?.id     
     };    
     console.log(raw)
+
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_MODEL}/createPrediction`, {
         method: "POST",
@@ -145,12 +145,11 @@ export const EstimationForm = ({
       });
 
       if (!response.ok) return new Error("No se pudo obtener informacion");
-
       const result = await response.json();    
+      setPrediction({ prediction: -1 });
     } catch (error) {
       console.log("Error haciendo peticion", error);
-    }
-    setPrediction({ prediction: -1 });
+    }        
   };
 
   useEffect(() => {

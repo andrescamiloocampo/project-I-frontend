@@ -1,3 +1,4 @@
+
 .username {
     margin-top: 10px;     
     font-size: 16px; 
@@ -46,15 +47,14 @@
   background: #555;
 }
 
-  .cardContainer {
+  .cardContainer {    
     position: relative;
     max-width: 90%;
-    margin: auto;
-    /*   */
+    margin: auto;    
     background-color: #ddd6fe;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    overflow: hidden;    
   }
     
   .flexContainer {
@@ -201,3 +201,12 @@
     font-size: 10px;
   }
 
+@media screen and (max-width: 900px) {
+  .flexContainer{
+    flex-direction: column;
+  }
+  .leftSide{
+    width: 100%;
+    border: none;
+  }
+}

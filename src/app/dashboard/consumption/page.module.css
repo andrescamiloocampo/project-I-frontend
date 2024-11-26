@@ -2,9 +2,8 @@
 .mainContainer {    
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  height: 80vh;
-
+  padding-bottom: 215px;
+  /* justify-content: center; */  
 } 
   
   .cardContainer {

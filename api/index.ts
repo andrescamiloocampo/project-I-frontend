@@ -7,3 +7,4 @@ export { getWeather } from './weather/getWeather';
 export { getPrediction } from './prediction/getPrediction';
 export { getRoutes } from './route/getRoutes';
 export { getPredictionsById } from './prediction/getPredictionsById';
+export { trainModel } from './prediction/trainModel';
