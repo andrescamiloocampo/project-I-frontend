@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import { type ImgM } from '../../../components/atoms/Img/Img.model';
+import { ImgM } from './Img.model';
 import styles from './Img.module.css';
-import { type cssVar } from '../../types/cssVar';
+import {type cssVar} from '../types/cssVar';
 import React from 'react';
 
 export const Img = ({

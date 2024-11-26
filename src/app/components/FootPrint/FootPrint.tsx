@@ -9,13 +9,25 @@ import { getZones } from "../../../../api";
 import earth from "@/../public/earth.png";
 import Image from "next/image";
 
+interface Prediction {
+  id: string;
+  ruta: string;
+  barrio: string;
+  horario: string;
+  clima: string;
+  tiempo_real: string;
+  tiempo_esperado: string;
+  tiempo_perdido: string;
+  userid: string;
+}
+
 export const FootPrint = async (): Promise<ReactElement> => {
   const data = await getPredictionsById();
   const zones = await getZones();
 
-  const barrios = data.map((register) => register.barrio);
-
-  const filtered = barrios.reduce((resultado, registro) => {
+  const barrios: string[] = data.map((register:Prediction) => register.barrio);
+  
+  const filtered = barrios.reduce((resultado: Record<string, { name: string; cantidad: number }>, registro: string) => {
     if (resultado[registro]) {
       resultado[registro].cantidad += 1;
     } else {
@@ -23,12 +35,16 @@ export const FootPrint = async (): Promise<ReactElement> => {
     }
     return resultado;
   }, {});
+  console.log(filtered);
 
-  const distances = zones.reduce((total, zone) => {
-    const cantidad = filtered[zone.name.trim()]?.cantidad || 0;
-    const distance = Number(zone.distance.split("km")[0]);
-    return total + cantidad * distance;
-  }, 0);
+  const distances = zones.reduce(
+    (total: number, zone: { name: string; distance: string }) => {
+      const cantidad = filtered[zone.name.trim()]?.cantidad || 0;
+      const distance = Number(zone.distance.split("km")[0]);
+      return total + cantidad * distance;
+    },
+    0
+  );
 
   console.log(zones["porvenir"]);
 
@@ -82,7 +98,8 @@ export const FootPrint = async (): Promise<ReactElement> => {
                           <span>
                             {
                               zones.find(
-                                (zone) => zone.name === prediction.barrio
+                                (zone: { name: string }) =>
+                                  zone.name === prediction.barrio
                               ).distance
                             }
                           </span>
@@ -104,8 +121,8 @@ export const FootPrint = async (): Promise<ReactElement> => {
                     </span>
                   </div>
                   <p className={styles.statsTitle}>Consumo</p>
-                </div>                
-                <LinearProgressIndicator value={(totalUser / total) * 100} />                
+                </div>
+                <LinearProgressIndicator value={(totalUser / total) * 100} />
               </div>
             </div>
           </div>

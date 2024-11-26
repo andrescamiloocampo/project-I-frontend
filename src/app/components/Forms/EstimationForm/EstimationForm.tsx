@@ -108,8 +108,7 @@ export const EstimationForm = ({
       "";
     const RUTA =
       routes.find((route) => route.name === formFields.RUTA)?.code.toString() ??
-      "";
-
+      "";    
     try {
       const response = await fetch("/api/prediction", {
         method: "POST",
@@ -118,7 +117,7 @@ export const EstimationForm = ({
         },
         body: JSON.stringify({ ...formFields, BARRIO, RUTA }),
       });
-      const result = await response.json();
+      const result = await response.json();      
       setPrediction(result);
     } catch (error) {
       console.error("Error fetching prediction:", error);
@@ -132,8 +131,7 @@ export const EstimationForm = ({
       TIEMPO_ESPERADO: expectedTime,
       TIEMPO_PERDIDO: prediction.prediction - expectedTime, 
       id: session.data?.user?.id     
-    };    
-    console.log(raw)
+    };        
 
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_MODEL}/createPrediction`, {

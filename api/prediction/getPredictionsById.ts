@@ -2,7 +2,9 @@ import { auth } from "../../auth";
 
 export const getPredictionsById = async (): Promise<any> => {
   const headers = new Headers();
-  const session = await auth();
+  const session:any = (await auth()) ?? {
+    user: { sessionData: { acces_token: "" } },
+  };
   headers.append("Content-Type", "application/json");
   headers.append(
     "Authorization",
