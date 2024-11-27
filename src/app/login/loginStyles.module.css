@@ -65,11 +65,46 @@
   display: none;
 }
 
+.welcomeButtons{
+  display: none;
+  gap: 10px;  
+}
+
 @keyframes moverX {
   0% {
     transform: translateX(-30vw); /* Inicia justo detrás de .options */
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+
+@media screen and (max-width: 1300px){
+  .options{
+    display:none;
+  } 
+
+  .welcome{
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .transitionForm{
+    width: 100%;
+    padding: 50px;
+    transform: translateX(0);
+  }
+
+  .btns{
+    margin-bottom: 0;
+  }
+
+  .welcomeButtons{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
   }
 }

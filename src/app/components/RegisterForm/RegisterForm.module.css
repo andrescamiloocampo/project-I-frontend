@@ -53,3 +53,11 @@
     display: flex;
     align-items: center;
 }
+
+
+@media screen and (max-width: 1300px){
+    .loginForm{
+        border-radius: 10px;
+        height: fit-content;
+    }
+  }

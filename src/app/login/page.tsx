@@ -1,13 +1,13 @@
 import { ReactElement } from "react";
 import LoginForm, { type Session } from "../components/LoginForm/LoginForm";
 import styles from "./loginStyles.module.css";
-import Button from '@mui/material/Button'
+import Button from "@mui/material/Button";
 import { RegisterForm } from "../components/RegisterForm/RegisterForm";
 import Link from "next/link";
 import { Text } from "../components/Text/Text";
 import Image from "next/image";
 import bus from "../../../public/bus.png";
-import stop from '../../../public/stop.jpg'
+import stop from "../../../public/stop.jpg";
 import { redirect } from "next/navigation";
 import { auth } from "../../../auth";
 
@@ -32,14 +32,14 @@ export default async function LoginPage({
             width={0}
             height={0}
             objectFit="cover"
-            style={{ width: "100%", height: "100%",borderRadius: 'inherit' }}
+            style={{ width: "100%", height: "100%", borderRadius: "inherit" }}
           />
         </div>
         <Link href="?method=login" passHref className={styles.btns}>
           <Button variant="contained">Iniciar sesión</Button>
         </Link>
         <Link href="?method=register" passHref className={styles.btns}>
-          <Button variant="contained">Registrarse</Button>          
+          <Button variant="contained">Registrarse</Button>
         </Link>
       </div>
 
@@ -64,6 +64,15 @@ export default async function LoginPage({
                 fontSize="17px"
               />
               <Image src={bus} alt="Imagen de un bus" width={200} height={50} />
+
+              <div className={styles.welcomeButtons}>
+              <Link href="?method=login" passHref className={styles.btns}>
+                <Button variant="contained">Iniciar sesión</Button>
+              </Link>
+              <Link href="?method=register" passHref className={styles.btns}>
+                <Button variant="contained">Registrarse</Button>
+              </Link>
+              </div>
             </div>
           </div>
         </div>
