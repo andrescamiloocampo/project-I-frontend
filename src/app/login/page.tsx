@@ -55,13 +55,15 @@ export default async function LoginPage({
                 mText="¡Bienvenido!"
                 color="black"
                 fontWeight="600"
-                fontSize="60px"
+                fontSize="50px"
+                textAlign="center"
               />
               <Text
                 mText="Tride la plataforma que lo hace por usted 🚌"
                 color="black"
                 fontWeight="400"
                 fontSize="17px"
+                textAlign="center"
               />
               <Image src={bus} alt="Imagen de un bus" width={200} height={50} />
 
