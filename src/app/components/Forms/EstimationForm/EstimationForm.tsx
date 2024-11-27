@@ -132,7 +132,8 @@ export const EstimationForm = ({
       TIEMPO_PERDIDO: prediction.prediction - expectedTime, 
       id: session.data?.user?.id     
     };        
-
+    console.log('Enter',raw);
+    
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_MODEL}/createPrediction`, {
         method: "POST",
