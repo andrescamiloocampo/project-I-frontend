@@ -1,0 +1,33 @@
+.mainContent{
+
+    height: 80.3vh;
+    overflow-y: auto;
+    margin:  10px 20px;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.mainContent::-webkit-scrollbar{    
+    width: 10px;    
+}
+
+.mainContent::-webkit-scrollbar {
+width: 10px;
+}
+
+
+.mainContent::-webkit-scrollbar-track {
+background: #949393;
+border-radius: 50px;
+}
+
+.mainContent::-webkit-scrollbar-thumb {
+border-radius: 50px;
+background: #d8b4fe;
+}
+
+.mainContent::-webkit-scrollbar-thumb:hover {
+background: #555;
+}

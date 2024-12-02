@@ -3,7 +3,7 @@ export const getWeather = async (): Promise<any> => {
       const response = await fetch(`${process.env.NEXT_PUBLIC_WEATHER}`, {
         headers: {
           'Content-Type': 'application/json',       
-          'Cache-Control': 'no-cache',
+          'Cache-Control':  'no-cache, no-store, must-revalidate',
           'Expires': '0'
         },                
       });

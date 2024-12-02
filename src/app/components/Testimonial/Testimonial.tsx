@@ -17,7 +17,8 @@ export const Testimonial = (): ReactElement => {
       />
       <FeatureCard 
         imageUrl="https://images.unsplash.com/photo-1604357209793-fca5dca89f97?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"       
-        title="Información de rutas"        
+        title="Información de rutas" 
+        href="/dashboard/routes"       
       />
       <FeatureCard        
         imageUrl="https://image.cdn2.seaart.me/2024-11-19/csucqe5e878c73b0vltg-1/388cd8b154d117e29123418c7f9f4296_high.webp"

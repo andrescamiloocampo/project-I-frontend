@@ -25,5 +25,5 @@ import type { NextAuthConfig } from "next-auth";
 
 export default{
     providers: [],
-    trustHost: true
+    trustHost: true,
 } satisfies NextAuthConfig;

@@ -1,0 +1,87 @@
+.container {
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  
+  .zoneCard {
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .zoneHeader {
+    padding: 20px;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+  }
+  
+  .zoneHeader:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .zoneName {
+    font-size: 24px;
+    color: #2d3748;
+    margin: 0;
+  }
+  
+  .zoneId {
+    color: #718096;
+    font-size: 14px;
+    margin: 5px 0 0 0;
+  }
+  
+  .routesList {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  
+  .routesListExpanded {
+    max-height: 1000px;
+    transition: max-height 0.5s ease-in;
+  }
+  
+  .routeItem {
+    padding: 15px 20px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .routeInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .routeName {
+    font-size: 16px;
+    font-weight: 500;
+    color: #2d3748;
+  }
+  
+  .routeId {
+    font-size: 12px;
+    color: #718096;
+  }
+  
+  .distance {
+    background: #ebf4ff;
+    color: #3182ce;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  
